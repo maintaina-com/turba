@@ -1,7 +1,7 @@
 {
     "name": "horde/turba",
     "description": "Address book application",
-    "type": "project",
+    "type": "horde-application",
     "homepage": "https://www.horde.org/apps/turba",
     "license": "ASL",
     "authors": [
@@ -27,60 +27,67 @@
         }
     ],
     "version": "5.0.0",
-    "time": "2017-11-11",
+    "time": "2020-10-27",
     "repositories": [
         {
-            "type": "pear",
-            "url": "https://pear.horde.org"
+            "type": "composer",
+            "url": "https://horde-satis.maintaina.com"
         }
     ],
     "require": {
+        "horde/horde-installer-plugin": "dev-master",
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/content": "^2.0.5",
-        "pear-pear.horde.org/horde": "^5",
-        "pear-pear.horde.org/Horde_Auth": "^2",
-        "pear-pear.horde.org/Horde_Core": "^2.31",
-        "pear-pear.horde.org/Horde_Data": "^2",
-        "pear-pear.horde.org/Horde_Date": "^2",
-        "pear-pear.horde.org/Horde_Dav": "^1",
-        "pear-pear.horde.org/Horde_Exception": "^2",
-        "pear-pear.horde.org/Horde_Form": "^2",
-        "pear-pear.horde.org/Horde_Group": "^2",
-        "pear-pear.horde.org/Horde_History": "^2.1",
-        "pear-pear.horde.org/Horde_Icalendar": "^2",
-        "pear-pear.horde.org/Horde_Mail": "^2",
-        "pear-pear.horde.org/Horde_Mime": "^2",
-        "pear-pear.horde.org/Horde_Nls": "^2",
-        "pear-pear.horde.org/Horde_Perms": "^2",
-        "pear-pear.horde.org/Horde_Prefs": "^2",
-        "pear-pear.horde.org/Horde_Serialize": "^2",
-        "pear-pear.horde.org/Horde_Share": "^2",
-        "pear-pear.horde.org/Horde_Support": "^2",
-        "pear-pear.horde.org/Horde_Url": "^2",
-        "pear-pear.horde.org/Horde_Util": "^2.5",
-        "pear-pear.horde.org/Horde_Vfs": "^2.1.3",
-        "pear-pear.horde.org/Horde_View": "^2",
+        "horde/content": "dev-master",
+        "horde/horde": "dev-master",
+        "horde/auth": "dev-master",
+        "horde/core": "dev-master",
+        "horde/data": "dev-master",
+        "horde/date": "dev-master",
+        "horde/dav": "dev-master",
+        "horde/exception": "dev-master",
+        "horde/form": "dev-master",
+        "horde/group": "dev-master",
+        "horde/history": "dev-master",
+        "horde/icalendar": "dev-master",
+        "horde/mail": "dev-master",
+        "horde/mime": "dev-master",
+        "horde/nls": "dev-master",
+        "horde/perms": "dev-master",
+        "horde/prefs": "dev-master",
+        "horde/serialize": "dev-master",
+        "horde/share": "dev-master",
+        "horde/support": "dev-master",
+        "horde/url": "dev-master",
+        "horde/util": "dev-master",
+        "horde/vfs": "dev-master",
+        "horde/view": "dev-master",
         "ext-gettext": "*",
         "ext-hash": "*",
         "ext-json": "*"
     },
     "suggest": {
-        "pear-pear.horde.org/Horde_ActiveSync": "^2.4",
-        "pear-pear.horde.org/Horde_Backup": "^1",
-        "pear-pear.horde.org/Horde_Db": "^2.0.3",
-        "pear-pear.horde.org/Horde_Imsp": "^2",
-        "pear-pear.horde.org/Horde_Kolab_Format": "^2.0.5",
-        "pear-pear.horde.org/Horde_Kolab_Storage": "^2.1",
-        "pear-pear.horde.org/Horde_Ldap": "^2.1",
-        "pear-pear.horde.org/Horde_OpenXchange": "^1"
-    },
-    "replace": {
-        "pear-pear.horde.org/turba": "5.*",
-        "pear-horde/turba": "5.*"
+        "horde/activesync": "^2.4",
+        "horde/backup": "^1",
+        "horde/db": "^2.0.3",
+        "horde/imsp": "^2",
+        "horde/kolab_format": "^2.0.5",
+        "horde/kolab_storage": "^2.1",
+        "horde/ldap": "^2.1",
+        "horde/openxchange": "^1"
     },
     "autoload": {
         "psr-0": {
             "Turba": "lib/"
         }
-    }
+    },
+    "bin": [
+        "bin/turba-convert-sql-shares-to-sqlng",
+        "bin/turba-import-openxchange",
+        "bin/turba-import-vcards",
+        "bin/turba-import-squirrelmail-sql-abook",
+        "bin/turba-import-squirrelmail-file-abook",
+        "bin/turba-public-to-horde-share",
+        "bin/turba-convert-datatree-shares-to-sql",
+        "bin/turba-validate-email"
+    ]
 }
